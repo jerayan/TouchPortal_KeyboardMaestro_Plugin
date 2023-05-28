@@ -24,7 +24,7 @@ This plugin is not created by, nor supported by Keyboard Maestro. Any questions/
 - [Keyboard Maestro](https://www.keyboardmaestro.com/main/)
 
 ## Instructions
-1) Download the .tpp file from the [Latest Release]([https://github.com/spdermn02/TouchPortal_KeyboardMaestro_Plugin/releases](https://github.com/jerayan/TouchPortal_KeyboardMaestro_Plugin/releases/download/1.0.1/TPKeyboardMaestro-Mac.tpp))
+1) Download the .tpp file from the [Latest Release](https://github.com/jerayan/TouchPortal_KeyboardMaestro_Plugin/releases/download/1.0.1/TPKeyboardMaestro-Mac.tpp)
 2) In Touch Portal select the Wrench icon and `Import plug-in`
 3) Navigate to where the .tpp file was downloaded and select it, click `Ok`
 4) Upon first import it will present you 2 dialogs
