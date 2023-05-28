@@ -59,7 +59,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 # Authors
 
-- **Jameson Allen** - _Initial work_ - [Spdermn02](https://github.com/spdermn02)
+- **Jameson Allen** - _Initial work_ - [Spdermn02](https://github.com/spdermn02), _Aditional work_ - [jerayan](https://github.com/jerayan)
 
 # License
 
