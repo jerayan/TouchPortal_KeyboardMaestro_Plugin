@@ -14,7 +14,9 @@ let groups = {};
 let macros = {};
 
 const readKeyboardMaestroPlist = async () => {
+
     const plist = await bplist.parseFile(PLIST_FILE);
+    //console.log(plist);
     
     plist[0]["MacroGroups"].forEach((group,index) => {
         if (group.hasOwnProperty('SearchStrings')) {
@@ -25,19 +27,23 @@ const readKeyboardMaestroPlist = async () => {
         group.Macros.forEach((macro,idx) => {
             let macroName = `Unknown Macro Name ${i}`;
             i++;
-            if( macro.hasOwnProperty('Name')) {
+            if(macro.hasOwnProperty('Name')) {
                 macroName = macro.Name;
             }
-            else if( macro.Actions[0].hasOwnProperty("ActionName")) {
-                macroName = macro.Actions[0].ActionName;
-            }    
-            else if (macro.Actions[0].hasOwnProperty("Title")) {
-                macroName = macro.Actions[0].Title;
-            }
-            else if (macro.Actions[0].hasOwnProperty("MacroActionType") ) {
-                macroName = macro.Actions[0].MacroActionType;
-            }
-            //console.log(macroName);
+             else if (macro.Actions[0] && typeof macro.Actions[0] === 'object') 
+            //console.log(macro.Actions[0]);
+             {
+                 if(macro.Actions[0].hasOwnProperty("ActionName")) {
+                    macroName = macro.Actions[0].ActionName;
+                }    
+                else if (macro.Actions[0].hasOwnProperty("Title")) {
+                    macroName = macro.Actions[0].Title;
+                }
+                else if (macro.Actions[0].hasOwnProperty("MacroActionType") ) {
+                    macroName = macro.Actions[0].MacroActionType;
+                }
+            } 
+
             macros[macroName] = { 'UID': macro.UID };
             groups[group.Name].macros[macroName] = macros[macroName];
         })
@@ -49,8 +55,6 @@ const readKeyboardMaestroPlist = async () => {
 
 };
 
-
-
 const updateTouchPortalStates = () => {
 
 };
@@ -60,6 +64,7 @@ const getMacroUIDByName = (macroName) => {
 }
 
 TPClient.on("Action", (message) => {
+    //logIt(message.data[0].value, message.data[1].value);
     if (message.actionId === "keyboard_maestro.run_macro") {
         const macroName = message.data[0].value;
         const macroUID = getMacroUIDByName(macroName);
@@ -72,14 +77,14 @@ TPClient.on("Action", (message) => {
 
         let callUri = `${KMTRIGGER_URI}${macroUID}`;
         if( value != undefined && value != '' ) {
-            callUri = `${call_uri}&value=${value}`;
+            callUri = `${callUri}&value=${value}`;
         }
         open(callUri);
     }
 });
 
 TPClient.on("Broadcast", () => {
-    logIt('DEBUG', 'Received Broadcast Message, sending all states again');
+    //logIt('DEBUG', 'Received Broadcast Message, sending all states again');
     updateTouchPortalStates();
 });
 
@@ -100,6 +105,7 @@ TPClient.on("Info", (data) => {
 
     fs.watch(PLIST_FILE, (event, filename) => {
         logIt('DEBUG', `${event} triggerd for ${filename}`);
+
         if (event === 'change') {
             readKeyboardMaestroPlist();
         }
