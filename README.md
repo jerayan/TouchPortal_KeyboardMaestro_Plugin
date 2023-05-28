@@ -14,7 +14,7 @@
 
 This plugin is for MacOS Only. [Keyboard Maestro](https://www.keyboardmaestro.com/main/) is a program that can "automate applications or web sites, text or images, simple or complex, on command or scheduled. You can automate virtually anything." (pulled from Keyboard Maestro Website).
 
-This plugin is not created by, nor supported by Keyboard Maestro. Any questions/concerns should be directed through the [Github Issues](https://github.com/spdermn02/TouchPortal_KeyboardMaestro_Plugin/issues) or through the #keyboard-maestro channel on the [Official Touch Portal Discord](https://discord.gg/MgxQb8r)
+This plugin is not created by, nor supported by Keyboard Maestro. Any questions/concerns should be directed through the [Github Issues](https://github.com/spdermn02/TouchPortal_KeyboardMaestro_Plugin/issues) or mine [jerayan GitHub Issues](https://github.com/jerayan/TouchPortal_KeyboardMaestro_Plugin/issues) or through the #keyboard-maestro channel on the [Official Touch Portal Discord](https://discord.gg/MgxQb8r)
 
 ## Requirements
 
