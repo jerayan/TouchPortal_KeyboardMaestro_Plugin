@@ -51,6 +51,7 @@ Issues and Bugs can be reported through [GitHub Issues](https://github.com/spder
 
 # Dependencies
  - [bplist-parser](https://www.npmjs.com/package/bplist-parser)
+ MAKE SURE THAT bplist-parser.js has this code in 12 line .... exports.maxObjectCount = 100 * 1000 * 1000; // 100Meg ... nothing less!!!
  - [touchportal-api](https://www.npmjs.com/package/touchportal-api)
 
 # Versioning
