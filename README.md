@@ -54,13 +54,10 @@ Issues and Bugs can be reported through [spdermn02 GitHub Issues](https://github
  - !!!MAKE SURE THAT bplist-parser.js has this code in 12 line .... exports.maxObjectCount = 100 * 1000 * 1000; // 100Meg ... nothing less!!!
  - [touchportal-api](https://www.npmjs.com/package/touchportal-api)
 
-# Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/spdermn02/tpohm_plugin/tags).
 
 # Authors
 
-- **Jameson Allen** - _Initial work_ - [Spdermn02](https://github.com/spdermn02), _Aditional work_ - [jerayan](https://github.com/jerayan)
+- **Jameson Allen** - _Initial work_ - [Spdermn02](https://github.com/spdermn02), _Bug Fixes_ - [jerayan](https://github.com/jerayan)
 
 # License
 
